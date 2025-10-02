@@ -1,0 +1,140 @@
+/* SSMClient: Solid Solutions */
+
+:root {
+	--print-font-size: 10pt;
+	--table-alternate-row-color: rgb(240, 240, 240);
+	/* margin: 50px !important; */
+}
+
+#root {
+	margin: 50px !important;
+}
+
+@page {
+	/* size: A4 Portrait; */
+	/* size: A4 Landscape; */
+	margin-bottom: 3cm !important; /* Adjust this value for spacing from the bottom edge */
+}
+
+/* page counter */
+@page {
+	@bottom-center {
+		font-size: 15px;
+		font-family: 'Roboto', Helvetica, Arial, sans-serif;
+		content: counter(page) ' / ' counter(pages);
+	}
+}
+
+* {
+	/* background: transparent; */
+	color: black !important;
+	font-size: var(--print-font-size);
+	text-decoration: none;
+	-webkit-transition: none !important;
+	transition: none !important;
+}
+
+body {
+	display: block;
+	-webkit-print-color-adjust: exact;
+}
+
+/* print header  */
+.print-header {
+	display: table;
+	margin-bottom: 5pt;
+}
+
+/* removed to avoid empty spaces in detailed tables*/
+/* td {break-inside: avoid;} */
+
+table {
+	/* background-color: white !important; */
+}
+
+th,
+.tabulator-print-table-row:nth-child(even),
+.Table tr:nth-child(even),
+.NestedTable tr:nth-child(even) {
+	background-color: var(--table-alternate-row-color) !important;
+}
+
+.tabulator-print-table-row:nth-child(odd) {
+	background-color: white !important;
+}
+
+.tabulator-print-table-row td {
+	font-size: var(--print-font-size) !important;
+}
+
+.tabulator-print-table .tabulator-data-tree-control {
+	display: none;
+}
+
+/* table header  */
+.tabulator-print-table thead tr th {
+	font-size: var(--print-font-size) !important;
+}
+
+/* images  */
+img.img-MainFrameDetails {
+	height: 150px;
+}
+
+img.ProgramIndicator {
+	height: 15px;
+}
+
+img.img-details {
+	height: 300px;
+}
+
+.img-details {
+	display: block !important;
+}
+
+div.tabulator-cell,
+div.tabulator-row {
+	break-inside: avoid;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+.no-print {
+	display: none !important;
+}
+
+.react-grid-layout {
+	width: 100% !important;
+	position: relative !important;
+	overflow: visible !important;
+}
+
+.react-grid-item {
+	page-break-inside: avoid;
+}
+
+/* optional: Remove borders/shadows/margins for clean printing */
+.react-grid-item,
+.react-grid-layout {
+	box-shadow: none !important;
+	border: none !important;
+}
+
+/* margin and padding of main element */
+.main {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/* space between consecutive tables */
+.tabulator-print-table {
+	margin-bottom: 10px;
+}
+
+/* fix issue where first calc column shows "undefined" */
+tr.tabulator-print-table-calcs td:first-child {
+	color: rgba(0, 0, 0, 0) !important;
+}
