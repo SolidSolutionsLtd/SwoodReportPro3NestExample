@@ -1,107 +1,7 @@
 const viewSettings = {
 	pages: [
 		{
-			id: 'dashboard',
-			name: 'dashboard',
-			url: '/dashboard',
-			type: 'layout',
-			title: 'Dashboard page',
-			resource: 'root',
-			sections: [
-				{
-					id: 'main',
-					name: 'main',
-					type: 'grid',
-					grid: {
-						cells: [
-							{
-								field: 'root',
-								formatter: 'chart',
-								range: '1,1:6,7',
-								formatterParams: {
-									legendTitle: 'Item Quantities',
-									fields: [
-										{
-											field: 'arraySum(quantity, root.frames)',
-											legendLabel: 'frames',
-										},
-										{
-											field: 'arraySum(quantity, root.panels)',
-											legendLabel: 'panels',
-										},
-										{
-											field: 'arraySum(quantity, root.programs)',
-											legendLabel: 'programs',
-										},
-										{
-											field: 'arraySum(quantity, root.sheets)',
-											legendLabel: 'sheets',
-										},
-										{
-											field: 'arraySum(quantity, root.programParts)',
-											legendLabel: 'programParts',
-										},
-										{
-											field: 'arraySum(quantity, root.patterns)',
-											legendLabel: 'patterns',
-										},
-										{
-											field: 'arraySum(quantity, root.hardware)',
-											legendLabel: 'hardware',
-										},
-									],
-								},
-							},
-							{
-								field: 'materials',
-								formatter: 'chart',
-								range: '7,1:12,7',
-								formatterParams: {
-									legendTitle: 'Item Costs',
-									fields: [
-										{
-											field: 'arraySum(cost, panelMaterials)',
-											legendLabel: 'panels',
-										},
-										{
-											field: 'arraySum(cost, laminateMaterials)',
-											legendLabel: 'laminates',
-										},
-										{
-											field: 'arraySum(cost, edgebandMaterials)',
-											legendLabel: 'edgebands',
-										},
-										{
-											field: 'arraySum(cost, boardMaterials)',
-											legendLabel: 'boards',
-										},
-										{
-											field: 'arraySum(cost, weldmentMaterials)',
-											legendLabel: 'weldments',
-										},
-										{
-											field: 'arraySum(cost, hardware)',
-											legendLabel: 'hardware',
-										},
-										{
-											field: 'arraySum(cost, panelProcesses)',
-											legendLabel: 'panel processes',
-										},
-										{
-											field: 'arraySum(cost, programs)',
-											legendLabel: 'machining',
-										},
-									],
-								},
-							},
-						],
-					},
-				},
-			],
-			comment: 'dashboard page',
-		},
-		{
-			id: 'sandbox-page-table-78',
+			id: 'sandbox-page-table',
 			name: 'sandbox-page-table',
 			url: '/sandbox-page-table',
 			type: 'table',
@@ -124,6 +24,7 @@ const viewSettings = {
 						title: 'pdf',
 						width: 50,
 						headerSort: false,
+						print: false,
 						formatter: 'link',
 						formatterParams: {
 							urlField: 'documents.PDF_PANEL.relativeURI',
@@ -396,6 +297,7 @@ const viewSettings = {
 						title: 'pdf',
 						formatter: 'link',
 						headerSort: false,
+						print: false,
 						formatterParams: {
 							urlField: 'documents.PDF_PANEL.relativeURI',
 							icon: { name: 'open_in_new' },
@@ -615,6 +517,7 @@ const viewSettings = {
 						title: 'pdf',
 						formatter: 'link',
 						headerSort: false,
+						print: false,
 						formatterParams: {
 							urlField: 'documents.PDF_PANEL.relativeURI',
 							icon: { name: 'open_in_new' },
@@ -714,6 +617,7 @@ const viewSettings = {
 						title: 'pdf',
 						formatter: 'link',
 						headerSort: false,
+						print: false,
 						formatterParams: {
 							urlField: 'documents.PDF_PANEL.relativeURI',
 							icon: { name: 'open_in_new' },
@@ -4763,15 +4667,6 @@ const viewSettings = {
 					children: [],
 				},
 				{
-					id: 'dashboard',
-					to: '/dashboard',
-					label: 'Dashboard',
-					icon: {
-						name: 'dashboard',
-					},
-					children: [],
-				},
-				{
 					id: 'frames',
 					to: '/frames',
 					label: 'Frames',
@@ -5264,9 +5159,9 @@ const viewSettings = {
 				name: 'nest group',
 				comment: 'group focused on nesting',
 				pages: [
-					{
-						id: 'home',
-					},
+					// {
+					// 	id: 'home',
+					// },
 					{
 						id: 'programs',
 					},
@@ -5299,7 +5194,7 @@ const viewSettings = {
 					id: 'main',
 				},
 				group: {
-					id: 'main-group',
+					id: 'design-group',
 				},
 			},
 			{
@@ -5309,7 +5204,7 @@ const viewSettings = {
 					id: 'main',
 				},
 				group: {
-					id: 'main-group',
+					id: 'cam-group',
 				},
 				comment: 'option focused on cam',
 			},
@@ -5320,7 +5215,7 @@ const viewSettings = {
 					id: 'main',
 				},
 				group: {
-					id: 'main-group',
+					id: 'nest-group',
 				},
 				comment: 'option focused on nesting',
 			},
