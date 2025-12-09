@@ -1,0 +1,30 @@
+.no-print {
+	display: none !important;
+}
+
+.label-page {
+	page-break-after: always;
+}
+
+@page {
+	margin: 0mm !important;
+
+	/* remove page counter */
+	/* @bottom-center {
+			content: '';
+		} */
+}
+
+* {
+	/* Force to print background image  */
+	-webkit-print-color-adjust: exact !important; /*Chrome, Safari */
+	color-adjust: exact !important; /*Firefox*/
+}
+
+br {
+	display: none;
+}
+
+.label {
+	border: none;
+}
