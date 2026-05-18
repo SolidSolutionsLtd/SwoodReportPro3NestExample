@@ -21,12 +21,20 @@
 
 * {
 	/* background: transparent; */
-	color: black !important;
-	font-size: var(--print-font-size);
+	/* color: black !important; */
+	/* Removed important because it causes issues in grid when font color is changed with custom sx */
+	color: black;
+	/* disabled because it causes issues in grid when font size is changed from default */
+	/* font-size: var(--print-font-size); */
 	text-decoration: none;
 	-webkit-transition: none !important;
 	transition: none !important;
 	/* background-color: white !important; */
+}
+
+/* ensure links are black */
+a {
+	color: black !important;
 }
 
 body {
@@ -95,6 +103,13 @@ div.tabulator-row {
 	background: white !important;
 }
 
+.react-grid-layout-header,
+.react-grid-item-header {
+	width: 100% !important;
+	border: none !important;
+	background: white !important;
+}
+
 /* margin and padding of main element */
 .main {
 	margin: 0 !important;
@@ -124,11 +139,4 @@ div.tabulator-row {
 /* ensure calcs have bold font */
 tr.tabulator-print-table-calcs td {
 	font-weight: bold !important;
-}
-
-.react-grid-layout-header,
-.react-grid-item-header {
-	width: 100% !important;
-	border: none !important;
-	background: white !important;
 }
